@@ -91,9 +91,9 @@
 							    session_start();
 							    if (isset($_SESSION['username'])){
                                     if ($_SESSION['userlevel'] == 1){
-                                        echo "<li><a href=\"my.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                        echo "<li><a href=\"my.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                     } else {
-                                        echo "<li><a href=\"myuser.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                        echo "<li><a href=\"myuser.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                     }
                                     echo "<li><a href=\"DAO_logout.php\" id=\"regist\">注销</a></li>";
                                 } else {
@@ -118,55 +118,82 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4">
+                        <?php
+                        require_once 'util/DBUtil.php';
+                        $sql = "select * from ( select rownum rn,a.* from user_table a where rownum <= 4 ) where rn >= 2";
+                        $db = new DBUtil();
+                        $conn = $db->connectDB();
+                        $res = $db->selectDB($conn, $sql);
+                        ?>
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup image-popup" href="images/gallery-1.jpg"><img src="images/gallery-1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                            <a class="gallery-img" href="personal.php?name=<?php echo $res[0]['USERNAME']; ?>"><img src="<?php
+                                if ($res[0]['SEX'] == "男"){
+                                    echo "images/groom-men-1.jpg";
+                                } else{
+                                    echo "images/bridesmaid-1.jpg";
+                                }
+                                ?>" class="img-responsive" alt="<?php echo $res[0]['USERNAME']; ?>"></a>
 						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-7.jpg"><img src="images/gallery-7.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
+
 					</div>
 					<div class="col-md-4">
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-6.jpg"><img src="images/gallery-6.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-2.jpg"><img src="images/gallery-2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-5.jpg"><img src="images/gallery-5.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img" href="personal.php?name=<?php echo $res[1]['USERNAME']; ?>"><img src="<?php
+                                if ($res[1]['SEX'] == "男"){
+                                    echo "images/groom-men-2.jpg";
+                                } else{
+                                    echo "images/bridesmaid-2.jpg";
+                                }
+                                ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-3.jpg"><img src="images/gallery-3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="images/gallery-4.jpg"><img src="images/gallery-4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
+                        <div class="gallery animate-box">
+                            <a class="gallery-img" href="personal.php?name=<?php echo $res[2]['USERNAME']; ?>"><img src="<?php
+                                if ($res[2]['SEX'] == "男"){
+                                    echo "images/groom-men-3.jpg";
+                                } else{
+                                    echo "images/bridesmaid-3.jpg";
+                                }
+                                ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        </div>
+
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
+        <?php
+        $sqlman = "select * from user_table where sex = '男'";
+        $dbman = new DBUtil();
+        $connman = $db->connectDB();
+        $resman = $db->selectDB($connman, $sqlman);
+
+        $sqlnv = "select * from user_table where sex = '女'";
+        $dbnv = new DBUtil();
+        $connnv = $db->connectDB();
+        $resnv = $db->selectDB($connnv, $sqlnv);
+        ?>
+
 		<div id="fh5co-couple" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row row-bottom-padded-md animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="images/groom.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<h3>王大牛</h3>
+							<h3><?php echo $resman[2]['USERNAME'];?></h3>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="images/bride.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<h3>李小娥</h3>
+							<h3><?php echo $resnv[0]['USERNAME'];?></h3>
 						</div>
 					</div>
 				</div>
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2">
 						<div class="col-md-12 text-center heading-section">
-							<h2>成功匹配</h2>
+							<h2>成功配对</h2>
 							<p><strong> &mdash;on Dec 28, 2017</strong></p>
 						</div>
 					</div>
@@ -198,7 +225,7 @@
 	<!-- END fh5co-wrapper -->
 
 	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
 	</body>

@@ -73,9 +73,9 @@
                             session_start();
                             if (isset($_SESSION['username'])){
                                 if ($_SESSION['userlevel'] == 1){
-                                    echo "<li  class=\"active\"><a href=\"my.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                    echo "<li  class=\"active\"><a href=\"my.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                 } else {
-                                    echo "<li  class=\"active\"><a href=\"myuser.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                    echo "<li  class=\"active\"><a href=\"myuser.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                 }
                                 echo "<li><a href=\"DAO_logout.php\" id=\"regist\">注销</a></li>";
                             } else {
@@ -144,8 +144,7 @@
 	</div>
 	<!-- END fh5co-wrapper -->
 
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
 	</body>

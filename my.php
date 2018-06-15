@@ -73,9 +73,9 @@
                             session_start();
                             if (isset($_SESSION['username'])){
                                 if ($_SESSION['userlevel'] == 1){
-                                    echo "<li  class=\"active\"><a href=\"my.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                    echo "<li  class=\"active\"><a href=\"my.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                 } else {
-                                    echo "<li  class=\"active\"><a href=\"myuser.php\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
+                                    echo "<li  class=\"active\"><a href=\"myuser.php?page=1\" id=\"login\"><u>".$_SESSION['username']."</u></a></li>";//进入个人主页
                                 }
                                 echo "<li><a href=\"DAO_logout.php\" id=\"regist\">注销</a></li>";
                             } else {
@@ -105,7 +105,11 @@
                     <?php
                         require_once 'util/DBUtil.php';
                         //查询数据库的所有用户
-                        $sql="select * from USER_TABLE where userlevel = 0";
+                        $page = $_GET['page'];
+                        $page_start = ($page-1) * 7 + 2;
+                        $page_end = $page * 7;
+                        $sql = "select * from ( select rownum rn,a.* from user_table a where rownum <= ".$page_end." ) where rn >= ".$page_start."";
+
                         $db = new DBUtil();
                         $conn = $db->connectDB();
                         $res = $db->selectDB($conn, $sql);
@@ -113,7 +117,13 @@
                             ?>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div class="fh5co-blog animate-box">
-                                    <a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
+                                    <a href="#"><img class="img-responsive" src="<?php
+                                        if ($user['SEX'] == "男"){
+                                            echo "images/groom-men-3.jpg";
+                                        } else{
+                                            echo "images/bridesmaid-2.jpg";
+                                        }
+                                        ?>" alt=""></a>
                                     <div class="blog-text">
                                         <div class="prod-title">
                                             <h3><label>姓名：</label><a href="#"><?php echo $user['USERNAME']; ?></a></h3>
@@ -133,7 +143,7 @@
                                             </span><br>
                                             <p>
                                                 <a href="DAO_agreeRegist.php?who=<?php echo $user['USERNAME'];?>" class="btn btn-primary btn-lg">同意</a>
-                                                <a href="DAO_refuseRufuse.php?who=<?php echo $user['USERNAME'];?>" class="btn btn-primary btn-lg">拒绝</a>
+                                                <a href="DAO_refuseRegist.php?who=<?php echo $user['USERNAME'];?>" class="btn btn-primary btn-lg">拒绝</a>
                                             </p>
                                         </div>
                                     </div>
@@ -147,7 +157,16 @@
 
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">下一页</a>
+                        <a href="my.php?page=<?php
+                        if ($page > 1){
+                            $page--;
+                        }
+                        echo $page;
+                        ?>" class="btn btn-primary btn-lg">上一页</a>
+                        <a href="my.php?page=<?php
+                        $page++;
+                        echo $page;
+                        ?>" class="btn btn-primary btn-lg">下一页</a>
 					</div>
 				</div>
 
@@ -185,8 +204,7 @@
 	</div>
 	<!-- END fh5co-wrapper -->
 
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
 	</body>

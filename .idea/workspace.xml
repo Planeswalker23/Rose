@@ -41,49 +41,50 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac524a55-ee8b-46cb-9de3-419715c72d94/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+            <state relative-caret-position="682">
+              <caret line="39" selection-start-line="39" selection-end-line="39" selection-end-column="89" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="my.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="123" column="75" lean-forward="true" selection-start-line="123" selection-start-column="75" selection-end-line="123" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1472">
-              <caret line="95" column="66" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="66" />
+            <state relative-caret-position="268">
+              <caret line="183" column="52" selection-start-line="183" selection-start-column="52" selection-end-line="183" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myuser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myuser.php">
+      <file leaf-file-name="DBUtil.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/DBUtil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="70" column="81" selection-start-line="70" selection-start-column="72" selection-end-line="70" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAO_regist.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DAO_regist.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>innerHTML</find>
+      <find>getElementById</find>
+      <find>document.getElementById</find>
+      <find>gallery-img</find>
+      <find>img</find>
+      <find>popup</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -104,13 +105,16 @@
         <option value="$PROJECT_DIR$/DAO_logout.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/DAO_login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/util/DBUtil.php" />
-        <option value="$PROJECT_DIR$/DAO_refuseRegist.php" />
-        <option value="$PROJECT_DIR$/my.php" />
-        <option value="$PROJECT_DIR$/DAO_agreeRegist.php" />
         <option value="$PROJECT_DIR$/myuser.php" />
+        <option value="$PROJECT_DIR$/DAO_refuseRegist.php" />
+        <option value="$PROJECT_DIR$/DAO_agreeRegist.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ac524a55-ee8b-46cb-9de3-419715c72d94/console.sql" />
+        <option value="$PROJECT_DIR$/util/personal.php" />
+        <option value="$PROJECT_DIR$/personal.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/my.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -134,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,26 +155,25 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle&#10;MySQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\php\wam\wamp\www\Rose" />
+      <recent name="C:\Users\Administrator\Desktop" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\php\wam\wamp\www\Rose" />
       <recent name="D:\php\wam\wamp\www\Rose\web" />
       <recent name="D:\php\wam\wamp\www\Rose\dao" />
       <recent name="C:\Users\Administrator\PhpstormProjects\Rose\Bean" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\php\wam\wamp\www\Rose" />
-      <recent name="C:\Users\Administrator\Desktop" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,14 +202,18 @@
       <workItem from="1528802668030" duration="8905000" />
       <workItem from="1528849194615" duration="11067000" />
       <workItem from="1528877598436" duration="3579000" />
+      <workItem from="1528984190715" duration="3705000" />
+      <workItem from="1528988597504" duration="932000" />
+      <workItem from="1529024444464" duration="6393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26813000" />
+    <option name="totallyTimeSpent" value="37843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" weight="0.32896176" />
@@ -213,7 +221,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49947917" weight="0.32896176" />
-      <window_info anchor="bottom" id="Database Console" order="7" visible="true" weight="0.31912568" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.44480875" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12864584" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.2671875" />
@@ -236,13 +244,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac524a55-ee8b-46cb-9de3-419715c72d94/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/DBUtil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
@@ -309,9 +310,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spl.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/spl.sql" />
     <entry file="file://$PROJECT_DIR$/bean/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -391,34 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO_agreeRegist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO_refuseRegist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DAO_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -426,62 +397,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my.php">
+    <entry file="file://$PROJECT_DIR$/spl.sql" />
+    <entry file="file://$PROJECT_DIR$/sql.sql" />
+    <entry file="file://$PROJECT_DIR$/DAO_regist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="137" column="46" lean-forward="true" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/DBUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spl.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac524a55-ee8b-46cb-9de3-419715c72d94/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1472">
-          <caret line="95" column="66" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+        <state relative-caret-position="756">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="-113">
           <caret line="70" column="81" selection-start-line="70" selection-start-column="72" selection-end-line="70" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DAO_regist.php">
+    <entry file="file://$PROJECT_DIR$/DAO_refuseRegist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="297">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/scripts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret column="13871" selection-start-column="13871" selection-end-column="13871" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-7.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-6.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gallery-1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac524a55-ee8b-46cb-9de3-419715c72d94/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="39" selection-start-line="39" selection-end-line="39" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO_agreeRegist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/magnific-popup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="352" column="17" selection-start-line="352" selection-start-column="14" selection-end-line="352" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="798" column="20" selection-start-line="798" selection-start-column="20" selection-end-line="798" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="123" column="75" lean-forward="true" selection-start-line="123" selection-start-column="75" selection-end-line="123" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/DBUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="183" column="52" selection-start-line="183" selection-start-column="52" selection-end-line="183" selection-end-column="52" />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@ $sql = "update user_table set ispass = 0 where username = '".$username."'";
 $db = new DBUtil();
 $conn = $db->connectDB();
 $db->insertDB($conn, $sql);
-header('Refresh:1,Url=my.php');
+header('Refresh:1,Url=my.php?page=1');
 echo '成功拒绝申请...请稍后...';
 die;
 ?>
