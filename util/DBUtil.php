@@ -35,6 +35,7 @@ class DBUtil
         oci_close($conn); //关闭连接
         if(!$r) {
             $e = oci_error($sql);
+            print htmlentities($e['message']);
             $arr_result['result']='false';
         }
         else{
@@ -58,6 +59,7 @@ class DBUtil
         }
         //取回结果
         $i=0;
+        $pass = null;
         while($row = oci_fetch_array($stid, OCI_RETURN_NULLS)) {
             $pass[$i] = $row;
             $i++;

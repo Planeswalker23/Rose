@@ -63,12 +63,13 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">Rose</a></h1>
+					<h1 id="fh5co-logo"><a href="index.php">Rose</a></h1>
                     <!-- START #fh5co-menu-wrap -->
                     <nav id="fh5co-menu-wrap" role="navigation">
                         <ul class="sf-menu" id="fh5co-primary-menu">
                             <li><a href="index.php" >首页</a></li>
-                            <li><a href="guest.html">随机匹配</a></li>
+                            <li><a href="search.php">搜索</a></li>
+                            <li><a href="randomMatch.php">随机匹配</a></li>
                             <?php
                             session_start();
                             if (isset($_SESSION['username'])){
@@ -117,7 +118,7 @@
                             ?>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div class="fh5co-blog animate-box">
-                                    <a href="#"><img class="img-responsive" src="<?php
+                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"><img class="img-responsive" src="<?php
                                         if ($user['SEX'] == "男"){
                                             echo "images/groom-men-3.jpg";
                                         } else{
@@ -179,7 +180,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<h2>Jack &amp; Rose</h2>
+							<h2>Rose</h2>
 						</div>
 						<div class="col-md-6 col-md-offset-3 text-center">
 							<p class="fh5co-social-icons">

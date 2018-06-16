@@ -96,65 +96,85 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h2>个人中心 - 收到的消息</h2>
+						<h2>搜索结果</h2>
 					</div>
 				</div>
 			</div>
-
-
-
-
-            <div class="container">
-                <div class="row row-bottom-padded-md">
+			<div class="container">
+				<div class="row row-bottom-padded-md">
                     <!-- 每个申请start -->
                     <?php
-                    require_once 'util/DBUtil.php';
-                    $sql = "select * from USER_TABLE where username = (select distinct usernamefrom from match_pre where usernameto = '".$_SESSION['username']."')";
-
-                    $db = new DBUtil();
-                    $conn = $db->connectDB();
-                    $res = $db->selectDB($conn, $sql);
-                    if ($res != null) {
-                        foreach ($res as $user) {
-                            ?>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="fh5co-blog animate-box">
-                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"><img
-                                                class="img-responsive" src="<?php
-                                        if ($user['SEX'] == "男") {
-                                            echo "images/groom-men-3.jpg";
-                                        } else {
-                                            echo "images/bridesmaid-2.jpg";
-                                        }
-                                        ?>" alt=""></a>
-                                    <div class="blog-text">
-                                        <div class="prod-title">
-                                            <h3><label>姓名：</label><a href="#"><?php echo $user['USERNAME']; ?></a></h3>
-                                            <label>性别：</label><span><?php echo $user['SEX']; ?></span><br>
-                                            <label>年龄：</label><span><?php echo $user['AGE']; ?></span><br>
-                                            <label>籍贯：</label><span><?php echo $user['HOME']; ?></span><br>
-                                            <label>兴趣爱好：</label><span><?php echo $user['HOBBY']; ?></span><br>
-                                            <label>喜欢的类型：</label><span><?php echo $user['PREFERENCE']; ?></span><br>
-                                            <p>
-                                                <a href="personal.php?name=<?php echo $user['USERNAME']; ?>" class="btn btn-primary btn-lg">了解一下</a>
-                                            </p>
+                        require_once 'util/DBUtil.php';
+                        //查询数据库的所有用户
+                        $key = $_GET['key'];
+                        $sql = "select * from user_table where hobby = '".$key."' or preference = '".$key."'";
+                        $db = new DBUtil();
+                        $conn = $db->connectDB();
+                        $res = $db->selectDB($conn, $sql);
+                        if ($res != null) {
+                            foreach ($res as $user) {
+                                ?>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="fh5co-blog animate-box">
+                                        <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"><img
+                                                    class="img-responsive" src="<?php
+                                            if ($user['SEX'] == "男") {
+                                                echo "images/groom-men-3.jpg";
+                                            } else {
+                                                echo "images/bridesmaid-2.jpg";
+                                            }
+                                            ?>" alt=""></a>
+                                        <div class="blog-text">
+                                            <div class="prod-title">
+                                                <h3><label>姓名：</label><a href="#"><?php echo $user['USERNAME']; ?></a>
+                                                </h3>
+                                                <label>性别：</label><span><?php echo $user['SEX']; ?></span><br>
+                                                <label>年龄：</label><span><?php echo $user['AGE']; ?></span><br>
+                                                <label>籍贯：</label><span><?php echo $user['HOME']; ?></span><br>
+                                                <label>兴趣爱好：</label><span><?php echo $user['HOBBY']; ?></span><br>
+                                                <label>喜欢的类型：</label><span><?php echo $user['PREFERENCE']; ?></span><br>
+                                                <label>是否通过：</label><span>
+                                                <?php
+                                                if ($user['ISPASS'] == 0) {
+                                                    echo "未通过";
+                                                } else {
+                                                    echo "通过";
+                                                }
+                                                ?>
+                                            </span><br>
+                                                <p>
+                                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"
+                                                       class="btn btn-primary btn-lg">了解一下</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
+                                <?php
+                            }
+                        } else {
+                            echo "<h3>好像没有你想要找的人，换个词再找找吧！</h3><br><br>";
                         }
-                    } else {
-                        ?>
-                        <center><h2>还没有人想要了解你</h2></center>
-                        <center><h2>快去<a href=""><strong><u>随机匹配</u></strong></a>看看吧</h2></center>
-
-                    <?php
-                    }
                     ?>
                     <!-- 每个申请end -->
-                </div>
-            </div>
+				</div>
+
+<!--				<div class="row">-->
+<!--					<div class="col-md-4 col-md-offset-4 text-center animate-box">-->
+<!--                        <a href="my.php?page=--><?php
+//                        if ($page > 1){
+//                            $page--;
+//                        }
+//                        echo $page;
+//                        ?><!--" class="btn btn-primary btn-lg">上一页</a>-->
+<!--                        <a href="my.php?page=--><?php
+//                        $page++;
+//                        echo $page;
+//                        ?><!--" class="btn btn-primary btn-lg">下一页</a>-->
+<!--					</div>-->
+<!--				</div>-->
+
+			</div>
 		</div>
 		<!-- fh5co-blog-section -->
 

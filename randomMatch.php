@@ -57,25 +57,6 @@
 	<body>
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
-	
-		<div class="fh5co-hero" data-section="home">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="container">
-							<div class="col-md-10 col-md-offset-1">
-								<div class="animate-box">
-									<h1>白玫瑰</h1>
-									<h2>这里有最合适你的人</h2>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <!--<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>-->
 
 		<header id="fh5co-header-section" class="sticky-banner">
 			<div class="container">
@@ -85,9 +66,9 @@
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.php" >首页</a></li>
+							<li><a href="index.php" >首页</a></li>
                             <li><a href="search.php">搜索</a></li>
-							<li><a href="randomMatch.php">随机匹配</a></li>
+							<li class="active"><a href="randomMatch.php">随机匹配</a></li>
 							<?php
 							    session_start();
 							    if (isset($_SESSION['username'])){
@@ -107,96 +88,55 @@
 				</div>
 			</div>
 		</header>
-
 		<!-- end:header-top -->
-
-		<div id="fh5co-gallery">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2>今日男神女神</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-                        <?php
-                        require_once 'util/DBUtil.php';
-                        $sql = "select * from ( select rownum rn,a.* from user_table a where rownum <= 4 ) where rn >= 2";
-                        $db = new DBUtil();
-                        $conn = $db->connectDB();
-                        $res = $db->selectDB($conn, $sql);
-                        ?>
-						<div class="gallery animate-box">
-                            <a class="gallery-img" href="personal.php?name=<?php echo $res[0]['USERNAME']; ?>"><img src="<?php
-                                if ($res[0]['SEX'] == "男"){
-                                    echo "images/groom-men-1.jpg";
-                                } else{
-                                    echo "images/bridesmaid-1.jpg";
-                                }
-                                ?>" class="img-responsive" alt="<?php echo $res[0]['USERNAME']; ?>"></a>
-						</div>
-
-					</div>
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img" href="personal.php?name=<?php echo $res[1]['USERNAME']; ?>"><img src="<?php
-                                if ($res[1]['SEX'] == "男"){
-                                    echo "images/groom-men-2.jpg";
-                                } else{
-                                    echo "images/bridesmaid-2.jpg";
-                                }
-                                ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-                        <div class="gallery animate-box">
-                            <a class="gallery-img" href="personal.php?name=<?php echo $res[2]['USERNAME']; ?>"><img src="<?php
-                                if ($res[2]['SEX'] == "男"){
-                                    echo "images/groom-men-3.jpg";
-                                } else{
-                                    echo "images/bridesmaid-3.jpg";
-                                }
-                                ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-                        </div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
         <?php
-        $sqlm = "select * from match where ismatch = 1";
+        require_once 'util/DBUtil.php';
+        if ($_SESSION['sex'] == null){
+            header('Refresh:0,Url=login.html');
+            die;
+        }
+        $sqlm = "select * from user_table where sex = '".$_SESSION['sex']."' and userlevel = 0";
         $dbm = new DBUtil();
         $connm = $dbm->connectDB();
         $resm = $dbm->selectDB($connm, $sqlm);
-
+        if ($resm != null){
         ?>
-
 		<div id="fh5co-couple" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row row-bottom-padded-md animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
-							<img src="images/bride.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<h3><?php echo $resm[0]['USERNAMEFROM'];?></h3>
+							<img src="<?php
+                            if ($_SESSION['sex'] == "男"){
+                                echo "images/groom.jpg";
+                            } else{
+                                echo "images/bride.jpg";
+                            }
+                            ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                            <a href="personal.php?name=<?php echo $resm[0]['USERNAME'];?>"><h3><?php echo $resm[0]['USERNAME'];?></h3></a>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
-							<img src="images/groom.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<h3><?php echo $resm[0]['USERNAMETO'];?></h3>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2">
-						<div class="col-md-12 text-center heading-section">
-							<h2>成功配对</h2>
-							<p><strong> &mdash;on Dec 28, 2017</strong></p>
+							<img src="<?php
+                            if ($_SESSION['sex'] == "男"){
+                                echo "images/groom.jpg";
+                            } else{
+                                echo "images/bride.jpg";
+                            }
+                            ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                            <a href="personal.php?name=<?php echo $resm[0]['USERNAME'];?>"><h3><?php echo $resm[1]['USERNAME'];?></h3></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+            <?php
+
+        } else{
+            header('Refresh:0,Url=login.html');
+            die;
+        }
+            ?>
 		
 		<footer>
 			<div id="footer">
