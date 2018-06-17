@@ -109,40 +109,50 @@
                     <!-- 每个申请start -->
                     <?php
                     require_once 'util/DBUtil.php';
-                    $sql = "select * from USER_TABLE where username = (select distinct usernamefrom from match_pre where usernameto = '".$_SESSION['username']."')";
+                    $sql = "select distinct usernamefrom from match_pre where usernameto = '".$_SESSION['username']."'";
 
                     $db = new DBUtil();
                     $conn = $db->connectDB();
-                    $res = $db->selectDB($conn, $sql);
-                    if ($res != null) {
-                        foreach ($res as $user) {
-                            ?>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="fh5co-blog animate-box">
-                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"><img
-                                                class="img-responsive" src="<?php
-                                        if ($user['SEX'] == "男") {
-                                            echo "images/groom-men-3.jpg";
-                                        } else {
-                                            echo "images/bridesmaid-2.jpg";
-                                        }
-                                        ?>" alt=""></a>
-                                    <div class="blog-text">
-                                        <div class="prod-title">
-                                            <h3><label>姓名：</label><a href="#"><?php echo $user['USERNAME']; ?></a></h3>
-                                            <label>性别：</label><span><?php echo $user['SEX']; ?></span><br>
-                                            <label>年龄：</label><span><?php echo $user['AGE']; ?></span><br>
-                                            <label>籍贯：</label><span><?php echo $user['HOME']; ?></span><br>
-                                            <label>兴趣爱好：</label><span><?php echo $user['HOBBY']; ?></span><br>
-                                            <label>喜欢的类型：</label><span><?php echo $user['PREFERENCE']; ?></span><br>
-                                            <p>
-                                                <a href="personal.php?name=<?php echo $user['USERNAME']; ?>" class="btn btn-primary btn-lg">了解一下</a>
-                                            </p>
+                    $resl = $db->selectDB($conn, $sql);
+                    $time = 0;
+
+                    if ($resl != null) {
+                        foreach ($resl as $name) {
+                            $sql1 = "select * from USER_TABLE where USERNAME = '". $name[0] ."'";
+                            $time++;
+                            $db1 = new DBUtil();
+                            $conn1 = $db1->connectDB();
+                            $res = $db->selectDB($conn1, $sql1);
+                            foreach ($res as $user) {
+                                ?>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="fh5co-blog animate-box">
+                                        <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"><img
+                                                    class="img-responsive" src="<?php
+                                            if ($user['SEX'] == "男") {
+                                                echo "images/groom-men-3.jpg";
+                                            } else {
+                                                echo "images/bridesmaid-2.jpg";
+                                            }
+                                            ?>" alt=""></a>
+                                        <div class="blog-text">
+                                            <div class="prod-title">
+                                                <h3><label>姓名：</label><a href="#"><?php echo $user['USERNAME']; ?></a></h3>
+                                                <label>性别：</label><span><?php echo $user['SEX']; ?></span><br>
+                                                <label>年龄：</label><span><?php echo $user['AGE']; ?></span><br>
+                                                <label>籍贯：</label><span><?php echo $user['HOME']; ?></span><br>
+                                                <label>兴趣爱好：</label><span><?php echo $user['HOBBY']; ?></span><br>
+                                                <label>喜欢的类型：</label><span><?php echo $user['PREFERENCE']; ?></span><br>
+                                                <p>
+                                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"
+                                                       class="btn btn-primary btn-lg">了解一下</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
+                                <?php
+                            }
                         }
                     } else {
                         ?>
@@ -151,7 +161,7 @@
 
                     <?php
                     }
-                    ?>
+                ?>
                     <!-- 每个申请end -->
                 </div>
             </div>

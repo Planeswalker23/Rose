@@ -121,7 +121,7 @@
 					<div class="col-md-4">
                         <?php
                         require_once 'util/DBUtil.php';
-                        $sql = "select * from ( select rownum rn,a.* from user_table a where rownum <= 4 ) where rn >= 2";
+                        $sql = "select * from ( select rownum rn,a.* from user_table a where rownum <= 4 and ISPASS = 1) where rn >= 2 and ISPASS = 1";
                         $db = new DBUtil();
                         $conn = $db->connectDB();
                         $res = $db->selectDB($conn, $sql);

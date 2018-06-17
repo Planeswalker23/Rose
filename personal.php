@@ -120,8 +120,7 @@
                                 <h3>籍贯：<?php echo $res[0]['HOME']; ?></h3>
                                 <h3>兴趣爱好：<?php echo $res[0]['HOBBY']; ?></h3>
                                 <h3>喜欢的类型：<?php echo $res[0]['PREFERENCE']; ?></h3>
-                                <h3>个人介绍：</h3>
-                                <h3></h3>
+                                <h3>&nbsp;</h3>
                             </div>
                         </div>
                     </div>

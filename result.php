@@ -107,7 +107,7 @@
                         require_once 'util/DBUtil.php';
                         //查询数据库的所有用户
                         $key = $_GET['key'];
-                        $sql = "select * from user_table where hobby = '".$key."' or preference = '".$key."'";
+                        $sql = "select * from user_table where hobby = '".$key."' and ispass = 1";
                         $db = new DBUtil();
                         $conn = $db->connectDB();
                         $res = $db->selectDB($conn, $sql);
@@ -158,25 +158,6 @@
                     ?>
                     <!-- 每个申请end -->
 				</div>
-
-<!--				<div class="row">-->
-<!--					<div class="col-md-4 col-md-offset-4 text-center animate-box">-->
-<!--                        <a href="my.php?page=--><?php
-//                        if ($page > 1){
-//                            $page--;
-//                        }
-//                        echo $page;
-//                        ?><!--" class="btn btn-primary btn-lg">上一页</a>-->
-<!--                        <a href="my.php?page=--><?php
-//                        $page++;
-//                        echo $page;
-//                        ?><!--" class="btn btn-primary btn-lg">下一页</a>-->
-<!--					</div>-->
-<!--				</div>-->
-
-			</div>
-		</div>
-		<!-- fh5co-blog-section -->
 
 		<footer>
 			<div id="footer">

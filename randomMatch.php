@@ -95,7 +95,7 @@
             header('Refresh:0,Url=login.html');
             die;
         }
-        $sqlm = "select * from user_table where sex = '".$_SESSION['sex']."' and userlevel = 0";
+        $sqlm = "select * from user_table where sex != '".$_SESSION['sex']."' and userlevel = 0 and ispass = 1";
         $dbm = new DBUtil();
         $connm = $dbm->connectDB();
         $resm = $dbm->selectDB($connm, $sqlm);
@@ -107,7 +107,7 @@
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="<?php
-                            if ($_SESSION['sex'] == "男"){
+                            if ($_SESSION['sex'] == "女"){
                                 echo "images/groom.jpg";
                             } else{
                                 echo "images/bride.jpg";
@@ -118,13 +118,13 @@
 						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="<?php
-                            if ($_SESSION['sex'] == "男"){
+                            if ($_SESSION['sex'] == "女"){
                                 echo "images/groom.jpg";
                             } else{
                                 echo "images/bride.jpg";
                             }
                             ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                            <a href="personal.php?name=<?php echo $resm[0]['USERNAME'];?>"><h3><?php echo $resm[1]['USERNAME'];?></h3></a>
+                            <a href="personal.php?name=<?php echo $resm[1]['USERNAME'];?>"><h3><?php echo $resm[1]['USERNAME'];?></h3></a>
 						</div>
 					</div>
 				</div>
