@@ -17,6 +17,7 @@ $age = $_POST["age"];
 $home = $_POST["home"];
 $hobby = $_POST["hobby"];
 $like = $_POST["like"];
+$phone = $_POST["phone"];
 
 $user = new User();
 
@@ -28,8 +29,8 @@ $user->setHome($home);
 $user->setHobby($hobby);
 $user->setLike($like);
 
-$sql = "insert into user_table(username,sex,age,home,hobby,PREFERENCE,PASSWORD) values (
-'".$user->getUsername() ."','".$user->getSex() ."','".$user->getAge() ."','".$user->getHome() ."'，'".$user->getHobby() ."','".$user->getLike() ."','".$user->getPassword() ."')";
+$sql = "insert into user_table(username,sex,age,home,hobby,PREFERENCE,PASSWORD,PHONE) values (
+'".$user->getUsername() ."','".$user->getSex() ."','".$user->getAge() ."','".$user->getHome() ."'，'".$user->getHobby() ."','".$user->getLike() ."','".$user->getPassword() ."','".$phone."')";
 $db = new DBUtil();
 $conn = $db->connectDB();
 $db->insertDB($conn, $sql);

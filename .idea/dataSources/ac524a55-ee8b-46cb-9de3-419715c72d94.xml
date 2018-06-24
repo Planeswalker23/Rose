@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="PHP">
       <ObjectId>91</ObjectId>
-      <IntrospectionTimestamp>2018-06-16.00:19:03</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-06-25.00:08:28</IntrospectionTimestamp>
       <CreatedTimestamp>2018-06-13.04:11:47</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.00:19:03</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-25.00:08:25</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -138,7 +138,7 @@
     <table id="42" parent="2" name="USER_TABLE">
       <ObjectId>74602</ObjectId>
       <CreatedTimestamp>2018-06-13.04:11:47</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-13.04:11:47</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-25.00:08:25</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <column id="43" parent="40" name="USERNAMEFROM">
@@ -207,7 +207,11 @@
       <DataType>VARCHAR2(50 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="57" parent="42" name="SYS_C0011113">
+    <column id="57" parent="42" name="PHONE">
+      <Position>10</Position>
+      <DataType>VARCHAR2(20 byte)|0s</DataType>
+    </column>
+    <index id="58" parent="42" name="SYS_C0011113">
       <ObjectId>74603</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-06-13.04:11:47</CreatedTimestamp>
@@ -216,7 +220,7 @@
       <ColNames>USERNAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="58" parent="42" name="SYS_C0011113">
+    <key id="59" parent="42" name="SYS_C0011113">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-06-13.04:11:47</ModifiedTimestamp>
       <ColNames>USERNAME</ColNames>

@@ -96,8 +96,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h2>个人中心 - 收到的消息</h2>
-                        <a href="show.php"><h3><u>查看成功配对的Ta</u></h3></a>
+						<h2>成功配对的Ta，电话了解一下？</h2>
 					</div>
 				</div>
 			</div>
@@ -110,7 +109,7 @@
                     <!-- 每个申请start -->
                     <?php
                     require_once 'util/DBUtil.php';
-                    $sql = "select distinct usernamefrom from match_pre where usernameto = '".$_SESSION['username']."'";
+                    $sql = "select distinct USERNAMETO from match where usernamefrom = '".$_SESSION['username']."'";
 
                     $db = new DBUtil();
                     $conn = $db->connectDB();
@@ -144,10 +143,7 @@
                                                 <label>籍贯：</label><span><?php echo $user['HOME']; ?></span><br>
                                                 <label>兴趣爱好：</label><span><?php echo $user['HOBBY']; ?></span><br>
                                                 <label>喜欢的类型：</label><span><?php echo $user['PREFERENCE']; ?></span><br>
-                                                <p>
-                                                    <a href="personal.php?name=<?php echo $user['USERNAME']; ?>"
-                                                       class="btn btn-primary btn-lg">了解一下</a>
-                                                </p>
+                                                <label>手机：</label><span><?php echo $user['PHONE']; ?></span><br>
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +153,7 @@
                         }
                     } else {
                         ?>
-                        <center><h2>还没有人想要了解你</h2></center>
+                        <center><h2>还没有人与你成功配对</h2></center>
                         <center><h2>快去<a href=""><strong><u>随机匹配</u></strong></a>看看吧</h2></center>
 
                     <?php
